@@ -1,0 +1,61 @@
+.gearmade-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.gearmade-product {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    flex: 0 0 calc(33.333% - 20px); /* Three items per row */
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.gearmade-product img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.gearmade-product h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+    font-weight: bold;
+}
+
+.gearmade-product .price {
+    font-size: 16px;
+    color: #e63946;
+    margin: 10px 0;
+}
+
+.gearmade-product .regular-price {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.gearmade-product:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .gearmade-product {
+        flex: 0 0 calc(50% - 20px); /* Two items per row on tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .gearmade-product {
+        flex: 0 0 100%; /* One item per row on mobile */
+    }
+}
