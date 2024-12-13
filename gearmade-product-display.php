@@ -28,7 +28,7 @@ function gearmade_display_products() {
     $products = gearmade_fetch_products();
 
     if (is_string($products)) {
-        return $products; // Return error message
+        return $products;
     }
 
     if (!isset($products['products']) || empty($products['products'])) {
@@ -41,12 +41,12 @@ function gearmade_display_products() {
     foreach ($products['products'] as $product) {
         echo '<div class="gearmade-product">';
         
-        // Display product image
+        // display images
         if (!empty($product['images']) && isset($product['images'][0]['src'])) {
             echo '<img src="' . esc_url($product['images'][0]['src']) . '" alt="' . esc_attr($product['name']) . '" />';
         }
 
-        // Display product name
+        // display name
         echo '<h2>' . esc_html($product['name']) . '</h2>';
         
         // Display product price
